@@ -1,4 +1,5 @@
 <script setup>
+import TimeStamp from "@/components/TimeStamp.vue";
 </script>
 
 <template>
@@ -64,62 +65,38 @@
               <div class="w overflow-y-auto">
                 <ul class="c h-[29rem] pl-8 pr-4">
                   <li class="relative flex justify-start items-start gap-x-2 mt-8">
+                    <!-- user1 profile pic -->
                     <div
                         class="w-8 h-8 rounded-full bg-red-200 shrink-0 flex justify-center items-center text-xs shadow-lightRight">
                       V
                     </div>
+                    <!-- user1 message -->
                     <div
                         class="max-w-[186px] min-h-8 max-h-min rounded-xl bg-red-100 hover:bg-red-200 transition-colors text-[11px] px-3 py-1 leading-6 shadow-lightRight">
                       What's going on?
                     </div>
                     <span class="inline-block cursor-pointer p-0.5 self-center"><svg class="w-4 h-4 text-white"><use
                         xlink:href="#heart"></use></svg></span>
-                    <span
-                        class="inline-block text-[7px] text-black/40 hover:text-black/80 absolute -right-2 -bottom-1 py-1 transition-colors select-none">5 years ago</span>
+                    <!-- timestamp  -->
+                    <TimeStamp time="2012-10-10T12:00:00Z" position="right"/>
                   </li>
                   <li class="relative flex justify-start flex-row-reverse items-start gap-x-2 mt-8">
+                    <!-- user2 profile pic -->
                     <div
                         class="w-8 h-8 rounded-full bg-amber-200 shrink-0 flex justify-center items-center text-xs shadow-lightLeft">
                       E
                     </div>
+                    <!-- user2 message -->
                     <div
                         class="max-w-[186px] min-h-8 max-h-min rounded-xl bg-amber-100 hover:bg-amber-200 transition-colors text-[11px] px-3 py-1 leading-6 shadow-lightLeft">
                       Everything is fine! wbu?
                     </div>
+                    <!-- like button -->
                     <span class="inline-block cursor-pointer p-0.5 self-center"><svg class="w-4 h-4 text-white"><use
                         xlink:href="#heart"></use></svg></span>
-                    <span
-                        class="inline-block text-[7px] text-black/40 hover:text-black/80 absolute -left-2 -bottom-1 py-1 transition-colors select-none">5 years ago</span>
+                    <!-- timestamp -->
+                    <TimeStamp time="2014-10-10T12:00:00Z" position="left"/>
                   </li>
-                  <li class="relative flex justify-start items-start gap-x-2 mt-8">
-                    <div
-                        class="w-8 h-8 rounded-full bg-red-200 shrink-0 flex justify-center items-center text-xs shadow-lightRight">
-                      V
-                    </div>
-                    <div
-                        class="max-w-[186px] min-h-8 max-h-min rounded-xl bg-red-100 hover:bg-red-200 transition-colors text-[11px] px-3 py-1 leading-6 shadow-lightRight">
-                      I'm doing well! Thanks
-                    </div>
-                    <span class="inline-block cursor-pointer p-0.5 self-center"><svg class="w-4 h-4 text-white"><use
-                        xlink:href="#heart"></use></svg></span>
-                    <span
-                        class="inline-block text-[7px] text-black/40 hover:text-black/80 absolute -right-2 -bottom-1 py-1 transition-colors select-none">5 years ago</span>
-                  </li>
-                  <li class="relative flex justify-start flex-row-reverse items-start gap-x-2 mt-8">
-                    <div
-                        class="w-8 h-8 rounded-full bg-amber-200 shrink-0 flex justify-center items-center text-xs shadow-lightLeft">
-                      E
-                    </div>
-                    <div
-                        class="max-w-[186px] min-h-8 max-h-min rounded-xl bg-amber-100 hover:bg-amber-200 transition-colors text-[11px] px-3 py-1 leading-6 shadow-lightLeft">
-                      Just wanted to ask you something about the project.
-                    </div>
-                    <span class="inline-block cursor-pointer p-0.5 self-center"><svg class="w-4 h-4 text-white"><use
-                        xlink:href="#heart"></use></svg></span>
-                    <span
-                        class="inline-block text-[7px] text-black/40 hover:text-black/80 absolute -left-2 -bottom-1 py-1 transition-colors select-none">5 years ago</span>
-                  </li>
-
                 </ul>
               </div>
             </div>

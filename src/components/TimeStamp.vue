@@ -34,4 +34,4 @@ const timeStampClasses = computed(() => ({'right-1': direction.value === 'ltr', 
 
 <style scoped>
 
-</style>  
+</style>

@@ -105,7 +105,6 @@ const darkenColor = computed(() => {
 .message-body {
   &:hover {
     background: v-bind('darkenColor') !important;
-
   }
 }
 </style>

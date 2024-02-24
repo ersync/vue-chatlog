@@ -9,16 +9,21 @@ const props = defineProps({
   },
   direction: {
     type: String,
-    required: true
+    required: true,
+    validator: (value) => ['ltr', 'rtl'].includes(value)
   }
 })
+
 const {time, direction} = toRefs(props)
-const timeObj = ref(DateTime.fromISO(time.value))
-const formattedTime = computed(() => timeObj.value.toFormat('HH:mm'))
-const fullFormattedTime = computed(() => timeObj.value.toFormat('LLLL dd yyyy HH:mm'))
-const timeStampClasses = computed(() => {
-  return {'right-1': direction.value === 'ltr', 'left-1': direction.value === 'rtl'}
-})
+
+// Computed property to format time in HH:mm format
+const formattedTime = computed(() => DateTime.fromISO(time.value).toFormat('HH:mm'))
+
+// Computed property to format time in a full date format
+const fullFormattedTime = computed(() => DateTime.fromISO(time.value).toFormat('LLLL dd yyyy HH:mm'))
+
+// Computed property to determine CSS classes based on direction
+const timeStampClasses = computed(() => ({'right-1': direction.value === 'ltr', 'left-1': direction.value === 'rtl'}))
 </script>
 
 <template>
@@ -29,4 +34,4 @@ const timeStampClasses = computed(() => {
 
 <style scoped>
 
-</style>
+</style>  

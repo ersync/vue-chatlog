@@ -6,8 +6,8 @@ import ScrollBooster from "scrollbooster";
 createApp(App).mount('#app')
 
 new ScrollBooster({
-    viewport: document.querySelector('.w'),
-    content: document.querySelector('.c'),
+    viewport: document.querySelector('.scrollable-wrapper'),
+    content: document.querySelector('.scrollable-content'),
     scrollMode: 'native',
     direction: 'vertical'
 });

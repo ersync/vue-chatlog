@@ -23,6 +23,7 @@ export default {
                 LonieLight: "Lonie-Light",
                 LonieRegular: "Lonie-Regular",
                 LonieBold: "Lonie-Bold",
+                LunasimaRegular: "Lunasima-Regular",
             }
         },
     },

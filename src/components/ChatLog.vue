@@ -1,6 +1,6 @@
 <script setup>
-
 import ChatEntry from "@/components/ChatEntry.vue";
+import messages from "@/data/messages.json";
 </script>
 
 <template>
@@ -16,13 +16,11 @@ import ChatEntry from "@/components/ChatEntry.vue";
       </div>
       <!-- chat body -->
       <div class="scrollable-wrapper overflow-y-auto">
-        <ul class="scrollable-content h-[27rem] pl-6 pr-3">
-
-          <ChatEntry direction="ltr" time-stamp="2024-02-24T00:19:58+0000" :liked="false" sender="Robert"
-                     body="What's going on?" color="#d1e6ff"/>
-          <ChatEntry direction="rtl" time-stamp="2024-02-24T00:20:35+0000" :liked="true" sender="Sarah"
-                     body="Everything is fine! wbu?"
-                     color="#eaeaea"/>
+        <ul class="scrollable-content h-[29rem] pl-6 pr-3">
+          <template v-for="(msg,index) in messages" :key="msg.id">
+            <ChatEntry v-if="msg.sender == 'Alice'" direction="ltr" v-bind="msg" color="#d1e6ff"/>
+            <ChatEntry v-else direction="rtl" v-bind="msg" color="#eaeaea"/>
+          </template>
         </ul>
       </div>
     </div>

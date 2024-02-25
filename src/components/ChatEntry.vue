@@ -13,6 +13,11 @@ const props = defineProps({
 })
 const {body, sender, liked, timeStamp, direction, color} = toRefs(props)
 
+const emit = defineEmits(['heartClick'])
+const handleHeartClick = () => {
+  emit('toggleHeart')
+}
+
 // Computed properties
 const containerClasses = computed(() => ({'flex-row-reverse': direction.value === 'rtl'}))
 
@@ -67,14 +72,16 @@ const ShadeColor = computed(() => {
       {{ sender[0].toUpperCase() }}
     </div>
     <!-- Message Body -->
-    <div :class="bodyClasses" :style="{ backgroundColor: color }"
-         class="message-body relative max-w-[173px] max-h-min rounded-t-2xl transition-colors duration-200 text-[11px] px-3 py-2 leading-4">
-      <span class="font-LunasimaRegular">{{ body }}</span>
+    <div class="relative">
+      <div :class="bodyClasses" :style="{ backgroundColor: color }"
+           class="message-body max-w-[173px] max-h-min rounded-t-2xl transition-colors duration-200 text-[11px] px-3 py-2 leading-4">
+        <span class="font-LunasimaRegular">{{ body }}</span>
+      </div>
       <!-- TimeStamp Component -->
       <TimeStamp :time="timeStamp" :direction="direction"/>
     </div>
     <!-- Heart Icon -->
-    <HeartIcon :liked="liked"/>
+    <HeartIcon :liked="liked" @heartClick="handleHeartClick"/>
   </li>
 </template>
 

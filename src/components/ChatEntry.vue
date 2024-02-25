@@ -60,7 +60,7 @@ const ShadeColor = computed(() => {
 })
 </script>
 <template>
-  <li :class="containerClasses" class="flex justify-start items-end gap-x-2 mt-8">
+  <li :class="containerClasses" class="flex justify-start items-end gap-x-2 cursor-default">
     <!-- Profile Avatar -->
     <div :class="profileClasses" :style="{ backgroundColor: color }"
          class="w-8 h-8 rounded-full shrink-0 flex justify-center items-center text-[10px]">
@@ -68,7 +68,7 @@ const ShadeColor = computed(() => {
     </div>
     <!-- Message Body -->
     <div :class="bodyClasses" :style="{ backgroundColor: color }"
-         class="message-body relative max-w-[173px] max-h-min rounded-t-2xl transition-colors text-[11px] px-3 py-2 leading-4">
+         class="message-body relative max-w-[173px] max-h-min rounded-t-2xl transition-colors duration-200 text-[11px] px-3 py-2 leading-4">
       <span class="font-LunasimaRegular">{{ body }}</span>
       <!-- TimeStamp Component -->
       <TimeStamp :time="timeStamp" :direction="direction"/>

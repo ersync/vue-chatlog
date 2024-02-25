@@ -11,14 +11,14 @@
     "sender": "Bob",
     "body": "Seen them. They're great!",
     "timeStamp": "2018-05-29T22:49:33+00:00",
-    "liked": false
+    "liked": true
   },
   {
     "id": 3,
     "sender": "Alice",
     "body": "Thanks! Took some time.",
     "timeStamp": "2018-05-29T22:50:22+00:00",
-    "liked": false
+    "liked": true
   },
   {
     "id": 4,

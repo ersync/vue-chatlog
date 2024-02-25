@@ -10,7 +10,7 @@
           <use xlink:href="#settings"></use>
         </svg>
       </button>
-      <h1 class="cabin-600">Chat between <span>Vladimir</span> and <span>Estragon</span></h1>
+      <h1 class="font-LonieBold">Chat between <span>Vladimir</span> and <span>Estragon</span></h1>
       <span class="relative flex items-center pt-1">
             <svg class="w-7 h-7 text-white"><use xlink:href="#heart"></use></svg>
             ️<span class="absolute -top-2 -right-2 text-sm font-GothamrndMedium">3</span>

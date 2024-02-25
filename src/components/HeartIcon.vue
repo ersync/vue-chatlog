@@ -7,8 +7,8 @@ const props = defineProps({
 const {liked} = toRefs(props)
 
 const heartStyles = computed(() => ({
-  color: liked.value ? 'red' : 'white',
-  stroke: liked.value ? 'red' : 'rgba(0,0,0,0.2)'
+  color: liked.value ? 'red' : 'transparent',
+  stroke: liked.value ? 'red' : 'rgba(255,255,255,0.5)'
 }))
 </script>
 

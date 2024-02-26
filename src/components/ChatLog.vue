@@ -1,12 +1,16 @@
 <script setup>
 import ChatEntry from "@/components/ChatEntry.vue";
-import messages from "@/data/messages.json";
-import {reactive, ref} from "vue";
+import {reactive, ref, toRefs} from "vue";
 
-const messagesData = reactive(messages);
 const handleHeartClick = (msg) => {
   msg.liked = !msg.liked
 }
+const props = defineProps({
+  logs: {type: Array, required: true},
+  receiverColor: {type: String, required: true},
+  senderColor: {type: String, required: true},
+})
+const {logs} = toRefs(props)
 </script>
 
 <template>
@@ -24,11 +28,11 @@ const handleHeartClick = (msg) => {
         <!-- chat body -->
         <div class="scrollable-wrapper h-[495px] max-h-[495px] overflow-y-auto h-full">
           <ul class="scrollable-content flex flex-col gap-y-8 h-full pl-6 pr-3 ">
-            <template v-for="(msg,index) in messagesData" :key="index">
+            <template v-for="(msg,index) in logs" :key="index">
               <div>
-                <ChatEntry v-if="msg.sender === 'Alice'" direction="ltr" v-bind="msg" color="#f2f5c5"
+                <ChatEntry v-if="msg.sender === 'Alice'" direction="ltr" v-bind="msg" :color="senderColor"
                            @toggleHeart="handleHeartClick(msg)"/>
-                <ChatEntry v-else direction="rtl" v-bind="msg" color="#fafafa"
+                <ChatEntry v-else direction="rtl" v-bind="msg" :color="receiverColor"
                            @toggleHeart="handleHeartClick(msg)"/>
               </div>
             </template>

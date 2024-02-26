@@ -13,7 +13,7 @@ const props = defineProps({
 })
 const {body, sender, liked, timeStamp, direction, color} = toRefs(props)
 
-const emit = defineEmits(['heartClick'])
+const emit = defineEmits(['toggleHeart'])
 const handleHeartClick = () => {
   emit('toggleHeart')
 }
@@ -34,41 +34,12 @@ const bodyClasses = computed(() => ({
   'rounded-r-2xl': direction.value === 'ltr'
 }))
 
-function calculateShadeColor(color, percent) {
-
-  var R = parseInt(color.substring(1, 3), 16);
-  var G = parseInt(color.substring(3, 5), 16);
-  var B = parseInt(color.substring(5, 7), 16);
-
-  R = parseInt(R * (100 + percent) / 100);
-  G = parseInt(G * (100 + percent) / 100);
-  B = parseInt(B * (100 + percent) / 100);
-
-  R = (R < 255) ? R : 255;
-  G = (G < 255) ? G : 255;
-  B = (B < 255) ? B : 255;
-
-  R = Math.round(R)
-  G = Math.round(G)
-  B = Math.round(B)
-
-  var RR = ((R.toString(16).length == 1) ? "0" + R.toString(16) : R.toString(16));
-  var GG = ((G.toString(16).length == 1) ? "0" + G.toString(16) : G.toString(16));
-  var BB = ((B.toString(16).length == 1) ? "0" + B.toString(16) : B.toString(16));
-
-  return "#" + RR + GG + BB;
-}
-
-const ShadeColor = computed(() => {
-  console.log(calculateShadeColor(color.value, -15))
-  return calculateShadeColor(color.value, -15);
-})
 </script>
 <template>
   <li :class="containerClasses" class="flex justify-start items-end gap-x-2 cursor-default">
     <!-- Profile Avatar -->
     <div :class="profileClasses" :style="{ backgroundColor: color }"
-         class="w-8 h-8 rounded-full shrink-0 flex justify-center items-center text-[10px]">
+         class="w-8 h-8 rounded-full shrink-0 flex justify-center items-center text-[10px] duration-200">
       {{ sender[0].toUpperCase() }}
     </div>
     <!-- Message Body -->
@@ -88,7 +59,7 @@ const ShadeColor = computed(() => {
 <style scoped lang="scss">
 .message-body {
   &:hover {
-    background: v-bind('ShadeColor') !important;
+    //background: v-bind('ShadeColor') !important;
   }
 }
 </style>

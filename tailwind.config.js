@@ -24,6 +24,9 @@ export default {
                 LonieRegular: "Lonie-Regular",
                 LonieBold: "Lonie-Bold",
                 LunasimaRegular: "Lunasima-Regular",
+            },
+            scale: {
+                '-100': '-1',
             }
         },
     },

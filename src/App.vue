@@ -28,7 +28,7 @@ const initiateColors = (colors) => {
 
 <template>
   <div class="text-white">
-    <div class="min-h-screen" style="background: url('/background.jpg') 100% 100% / cover no-repeat">
+    <div class="min-h-screen background">
       <div class="text-center">
         <TheHeader v-cloak sender="John" receiver="Mike" @sender-color-clicked="handleSenderColorClicked"
                    @receiver-color-clicked="handleReceiverColorClicked" @set-initial-colors="initiateColors"/>

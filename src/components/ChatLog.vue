@@ -14,16 +14,16 @@ const {logs} = toRefs(props)
 </script>
 
 <template>
-  <div class="iphone-bg flex justify-end pr-3.5">
+  <div class="iphone-bg flex justify-end pr-3.5 dark:text-white">
     <div
-        class="pt-[70px] pr-2.5 w-[330px] h-[614px] text-zinc-950 cursor-grab active:cursor-grabbing">
+        class="pt-[70px] pr-2.5 w-[330px] h-[614px] text-zinc-800 dark:text-white cursor-grab active:cursor-grabbing">
       <div class="text-start h-full">
         <!-- chat header -->
-        <div class="text-zinc-600 flex justify-start items-center gap-2 mb-4 mx-7">
-          <svg class="w-3 h-3 mt-0.5">
+        <div class="inline-flex justify-start items-center gap-2 mb-4 mx-7 cursor-pointer">
+          <svg class="w-3 h-3 mt-0.5 text-zinc-800 dark:text-white">
             <use xlink:href="#chevron-left"></use>
           </svg>
-          <span class="inline-block font-MadeTommyRegular text-2xl text-zinc-700">Chats</span>
+          <span class="inline-block font-MadeTommyRegular text-2xl">Chats</span>
         </div>
         <!-- chat body -->
         <div class="scrollable-wrapper h-[495px] max-h-[495px] overflow-y-auto h-full">
@@ -40,15 +40,19 @@ const {logs} = toRefs(props)
         </div>
       </div>
       <div
-          class="relative bg-blue-200 rounded-full w-5/6 text-gray-500/90 font-LonieLight text-left text-xs py-4 px-10 ml-8"
-          style="background-color: rgba(244,245,252,0.5)">
-        <svg class="h-3.5 w-3.5 absolute left-4 bottom-4 opacity-80 text-gray-500/80 ">
+          class="relative rounded-full w-5/6 text-gray-500/90 dark:text-gray-400/90 font-LonieLight text-left text-xs
+           pwwy-4 pxww-10 ml-8 bg-[#f4f5fc80] dark:bg-[#1e363ea1] border border-[#8f8f8f33] dark:border-[#c3c3c313]">
+        <svg
+            class="h-3.5 w-3.5 absolute left-4 bottom-4 opacity-80 text-gray-500/80 dark:text-white cursor-pointer">
           <use xlink:href="#attachment"></use>
         </svg>
-        <span>Type a message...</span>
-        <svg class="w-8 h-8 absolute right-3 bottom-1.5">
-          <use xlink:href="#paper-airplane"></use>
-        </svg>
+        <button @click.prevent="">
+          <svg class="w-8 h-8 absolute right-3 bottom-1.5 text-blue-300/80 dark:text-[#1e363ea1] cursor-pointer">
+            <use xlink:href="#paper-airplane"></use>
+          </svg>
+        </button>
+        <input type="text" placeholder="Type a message..."
+               class="inline-block bg-transparent border border-transparent outline-0 py-4 w-full rounded-full px-10 focus:border-amber-300">
       </div>
 
     </div>

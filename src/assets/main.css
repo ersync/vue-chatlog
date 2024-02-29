@@ -42,3 +42,19 @@
     background-position-x: 1px;
 }
 
+.background {
+    background: url('/background.jpg') 100% 100% / cover no-repeat
+}
+
+.dark .background {
+    background: url("/background-dark.jpg") 100% 100% / cover no-repeat !important;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    -webkit-border-radius: 6px;
+}

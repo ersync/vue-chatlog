@@ -28,7 +28,7 @@ const timeStampClasses = computed(() => ({'right-1': direction.value === 'ltr', 
 
 <template>
   <span :class="timeStampClasses"
-        class="inline-block text-[7px] text-black/80 hover:text-black/90 absolute -bottom-[20px] py-1 transition-colors select-none"
+        class="inline-block text-[7px] text-black/80 dark:text-zinc-500 absolute -bottom-[20px] py-1 transition-colors select-none"
         :time="fullFormattedTime">{{ formattedTime }}</span>
 </template>
 

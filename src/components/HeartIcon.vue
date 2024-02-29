@@ -7,24 +7,22 @@ const props = defineProps({
 const {liked} = toRefs(props)
 const emit = defineEmits(['heartClick'])
 const isAnimating = ref(false)
-const heartStyles = computed(() => ({
-  color: liked.value ? 'red' : 'transparent',
-  stroke: liked.value ? 'red' : '#99987897'
-}))
 
 const handleHeartClick = () => {
   emit('heartClick')
-  isAnimating.value = true // Set isAnimating to true when heart is clicked
+  isAnimating.value = true
   setTimeout(() => {
-    isAnimating.value = false// Set isAnimating to false after 0.5s
+    isAnimating.value = false
   }, 500)
 }
 </script>
 
 <template>
 <span @click="handleHeartClick" :class="{ 'liked': liked, 'animating': isAnimating }"
-      class="heart-icon inline-block cursor-pointer p-0.5 self-center">
-      <svg :style="heartStyles" class="w-4 h-4 text-white transition-colors">
+      class="heart-icon inline-block cursor-pointer p-0.5 self-center text-transparent">
+      <svg
+          :class="{'stroke-[#ff4646] text-[#ff4646]': liked, 'text-transparent stroke-[#aead8f75] dark:stroke-[#4f4f4f91]': !liked}"
+          class="w-4 h-4 transition-all">
         <use xlink:href="#heart"></use>
       </svg>
     </span>

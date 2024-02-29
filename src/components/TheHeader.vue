@@ -13,12 +13,10 @@ const lightColors = ['#efefef', '#ff7f7a', '#ffe88c', '#ffffff', '#93cdff', '#ae
 const darkColors = [
   '#44556ea6', '#551c30b3', '#602061b3', '#000000ed', '#5b5b5b6b', '#370c24a3', '#265a5991', '#9952678a', '#4a265ba6']
 
-// Initial color array is set to lightColors
 const colors = ref(lightColors)
-
-// Initial colors for sender and receiver
 const initialSenderColor = ref(colors.value[0])
 const initialReceiverColor = ref(colors.value[3])
+const colorPickerVisible = ref(false)
 
 // Watch for changes in colors array and update initial colors
 watch(colors, (newColors) => {
@@ -26,7 +24,6 @@ watch(colors, (newColors) => {
   initialReceiverColor.value = (newColors[3]);
 });
 
-const colorPickerVisible = ref(false)
 const toggleColorPicker = () => {
   colorPickerVisible.value = !colorPickerVisible.value
 }
@@ -52,29 +49,27 @@ const emitInitialColors = () => {
   })
 }
 
-// Load user theme from localStorage and set colors array and html class accordingly
-const loadUserTheme = () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+const applyTheme = (theme) => {
+  if (theme === "dark") {
     colors.value = darkColors
-    document.documentElement.classList.add("dark");
+    document.documentElement.classList.add("dark")
   } else {
     colors.value = lightColors
+    document.documentElement.classList.remove("dark")
   }
-};
+}
 
 // Toggle theme between light and dark
 const toggleTheme = () => {
-  const toggleThemeBtn = document.querySelector(".toggle-theme");
-  if (localStorage.theme === "dark") {
-    colors.value = lightColors
-    document.documentElement.classList.remove("dark");
-    localStorage.theme = "light";
-  } else {
-    colors.value = darkColors
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  }
+  const newTheme = localStorage.getItem("theme") === "dark" ? "light" : "dark"
+  localStorage.setItem("theme", newTheme)
+  applyTheme(newTheme);
+}
+
+// Load user theme from localStorage and set colors array and html class accordingly
+const loadUserTheme = () => {
+  const savedTheme = localStorage.getItem("theme") || "dark"
+  applyTheme(savedTheme)
 }
 
 // Update theme and emit initial colors
@@ -121,7 +116,7 @@ onMounted(() => {
       <div v-show="colorPickerVisible" class="flex justify-center gap-x-14 mt-3.5 items-center">
         <!-- sender color picker -->
         <div>
-          <h2 class="font-bold"><span>{{ sender }}'s</span> color:</h2>
+          <h2 class="font-MadeTommyRegular"><span>{{ sender }}'s</span> color:</h2>
           <ColorPicker :active-color="initialSenderColor" :colors="colors"
                        @color-clicked="handleSenderColorClick"/>
         </div>
@@ -133,7 +128,7 @@ onMounted(() => {
         </button>
         <!-- receiver color picker -->
         <div>
-          <h2 class="font-bold"><span>{{ receiver }}'s</span> color:</h2>
+          <h2 class="font-MadeTommyRegular"><span>{{ receiver }}'s</span> color:</h2>
           <ColorPicker :active-color="initialReceiverColor" :colors="colors"
                        @color-clicked="handleReceiverColorClick"/>
         </div>

@@ -21,7 +21,7 @@ const handleHeartClick = () => {
 <span @click="handleHeartClick" :class="{ 'liked': liked, 'animating': isAnimating }"
       class="heart-icon inline-block cursor-pointer p-0.5 self-center text-transparent">
       <svg
-          :class="{'stroke-[#ff4646] text-[#ff4646]': liked, 'text-transparent stroke-[#aead8f75] dark:stroke-[#4f4f4f91]': !liked}"
+          :class="{'stroke-[#ff4646] text-[#ff4646]': liked, 'text-transparent stroke-[#9e9d8f75] dark:stroke-[#4f4f4f91]': !liked}"
           class="w-4 h-4 transition-all">
         <use xlink:href="#heart"></use>
       </svg>

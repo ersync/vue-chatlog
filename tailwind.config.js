@@ -29,7 +29,7 @@ export default {
             scale: {
                 '-100': '-1',
             }
-        },
+        }
     },
     plugins: [],
 }

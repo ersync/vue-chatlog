@@ -14,10 +14,10 @@ const {logs} = toRefs(props)
 </script>
 
 <template>
-  <div class="iphone-bg flex justify-end pr-3.5 dark:text-white">
+  <div class="iphone-bg flex justify-end pr-3.5 dark:text-white backdrop-blur-[1px]">
     <div
-        class="pt-[70px] pr-2.5 w-[330px] h-[614px] text-zinc-800 dark:text-white cursor-grab active:cursor-grabbing">
-      <div class="text-start h-full">
+        class="flex flex-col pr-2.5 w-[330px] text-zinc-800 dark:text-white cursor-grab active:cursor-grabbing">
+      <div class="flex flex-col h-[614px] justify-end text-start">
         <!-- chat header -->
         <div class="inline-flex justify-start items-center gap-2 mb-4 mx-7 cursor-pointer">
           <svg class="w-3 h-3 mt-0.5 text-zinc-800 dark:text-white">
@@ -26,8 +26,8 @@ const {logs} = toRefs(props)
           <span class="inline-block font-MadeTommyRegular text-2xl">Chats</span>
         </div>
         <!-- chat body -->
-        <div class="scrollable-wrapper h-[495px] max-h-[495px] overflow-y-auto h-full">
-          <ul class="scrollable-content flex flex-col gap-y-8 h-full pl-6 pr-3 ">
+        <div class="scrollable-wrapper h-[505px] max-h-[505px] overflow-y-auto h-full">
+          <ul class="scrollable-content flex flex-col gap-y-7 h-full pl-6 pr-3">
             <template v-for="(msg,index) in logs" :key="index">
               <div>
                 <ChatEntry v-if="msg.sender === 'Alice'" direction="ltr" v-bind="msg" :color="senderColor"
@@ -40,8 +40,8 @@ const {logs} = toRefs(props)
         </div>
       </div>
       <div
-          class="relative rounded-full w-5/6 text-gray-500/90 dark:text-gray-400/90 font-LonieLight text-left text-xs
-           pwwy-4 pxww-10 ml-8 bg-[#f4f5fc80] dark:bg-[#1e363ea1] border border-[#8f8f8f33] dark:border-[#c3c3c313]">
+          class="relative self-center ml-4 rounded-full w-5/6 text-gray-500/90 dark:text-gray-400/90 font-LonieLight text-left text-xs
+            bg-[#f4f5fc80] dark:bg-[#1e363ea1] border border-[#8f8f8f33] dark:border-[#c3c3c313]">
         <svg
             class="h-3.5 w-3.5 absolute left-4 bottom-4 opacity-80 text-gray-500/80 dark:text-white cursor-pointer">
           <use xlink:href="#attachment"></use>
@@ -52,7 +52,7 @@ const {logs} = toRefs(props)
           </svg>
         </button>
         <input type="text" placeholder="Type a message..."
-               class="inline-block bg-transparent border border-transparent outline-0 py-4 w-full rounded-full px-10 focus:border-amber-300">
+               class="inline-block bg-transparent border border-transparent outline-0 py-4 w-full rounded-full px-10 focus:border-amber-300/20">
       </div>
 
     </div>

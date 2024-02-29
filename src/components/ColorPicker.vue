@@ -21,9 +21,13 @@ const handleColorClick = (color) => {
 <template>
   <ul class="flex gap-2 mt-2">
     <li v-for="color in colors" :key="color" @click="handleColorClick(color)"
-        :style="{ backgroundColor: color }"
-        :class="{ '!border-[2.5px] !border-yellow-600 dark:!border-yellow-200': color === activeColor }"
-        class="w-5 h-5 rounded-full border border-zinc-200/60 dark:border-zinc-700 cursor-pointer">
+        class="rounded-full border-[2.5px] border-transparent dark:border-zinc-800 cursor-pointer "
+        :class="{ '!border-[2.5px] !border-rose-400 dark:!border-yellow-200': color === activeColor }">
+      <div :style="{ backgroundColor: color }"
+           class="w-5 h-5 rounded-full border-2 border-transparent cursor-pointer"
+           :class="{ '!border-2 border-white dark:!border-0': color === activeColor }">
+
+      </div>
     </li>
   </ul>
 </template>

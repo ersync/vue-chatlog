@@ -28,7 +28,7 @@ const initiateColors = (colors) => {
 
 <template>
   <div class="text-white">
-    <div class="min-h-screen background">
+    <div class="min-h-screen background bg-repeat">
       <div class="text-center">
         <TheHeader v-cloak sender="John" receiver="Mike" @sender-color-clicked="handleSenderColorClicked"
                    @receiver-color-clicked="handleReceiverColorClicked" @set-initial-colors="initiateColors"/>
@@ -45,4 +45,25 @@ const initiateColors = (colors) => {
 </template>
 
 <style scoped>
+@keyframes animatedBackground {
+  from {
+    background-position: 100px 0;
+  }
+  to {
+    background-position: -15000px 0;
+  }
+}
+
+.background {
+  background: url('/background.jpg') repeat-x;
+  animation: animatedBackground 550s linear infinite;
+
+}
+
+.dark .background {
+  background: url('/background-dark.jpg') repeat-x;
+  animation: animatedBackground 550s linear infinite;
+
+}
+
 </style>

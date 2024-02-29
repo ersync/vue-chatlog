@@ -57,9 +57,4 @@ const bodyClasses = computed(() => ({
 </template>
 
 <style scoped lang="scss">
-.message-body {
-  &:hover {
-    //background: v-bind('ShadeColor') !important;
-  }
-}
 </style>

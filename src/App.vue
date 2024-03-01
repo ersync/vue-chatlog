@@ -33,7 +33,7 @@ const initiateColors = (colors) => {
         <TheHeader v-cloak sender="John" receiver="Mike" @sender-color-clicked="handleSenderColorClicked"
                    @receiver-color-clicked="handleReceiverColorClicked" @set-initial-colors="initiateColors"/>
         <div class="container">
-          <div class="flex justify-center items-center pt-6 px-6 mb-2.5">
+          <div class="flex justify-center items-center pt-6 px-3 xs:px-6 mb-2.5">
             <ChatLog v-if="colorsReceived" :logs="messagesData" :senderColor="senderColor"
                      :receiverColor="receiverColor"/>
           </div>

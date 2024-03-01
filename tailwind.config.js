@@ -14,6 +14,13 @@ export default {
                     lg: "0.625rem"
                 }
             },
+            screens: {
+                'xs': '480px',
+                'sm': '640px',
+                'md': '768px',
+                'lg': '1024px',
+                'xl': '1280px',
+            },
             boxShadow: {
                 lightRight: '2px 1px 4px rgba(0, 0, 0, 0.1)',
                 lightLeft: '-2px 1px 4px rgba(0, 0, 0, 0.1)',

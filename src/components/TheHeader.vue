@@ -92,13 +92,13 @@ onMounted(() => {
 
 <template>
   <div class="p-[18px] bg-black/20 backdrop-blur-2xl">
-    <div class="flex gap-x-16 text-2xl justify-center items-center ">
-      <button @click="toggleColorPicker">
+    <div class="flex gap-x-16 text-md sm:text-2xl justify-center items-center ">
+      <button @click="toggleColorPicker" class="shrink-0">
         <img
             src="/color-palette.png"
             class="w-8 h-8 transform -scale-x-100" alt="">
       </button>
-      <h1 class="font-LonieBold">Chat between
+      <h1 class="font-LonieBold shrink-0">Chat between <br class="sm:hidden">
         <span class="px-2 rounded-md py-1 inline-block text-zinc-800 dark:text-white"
               :style="{backgroundColor: initialSenderColor}">{{ sender }}
         </span>
@@ -107,7 +107,7 @@ onMounted(() => {
               :style="{backgroundColor: initialReceiverColor}">{{ receiver }}
         </span>
       </h1>
-      <span class="relative flex items-center pt-1">
+      <span class="relative flex items-center shrink-0 pt-1">
             <svg class="w-7 h-7 text-white"><use xlink:href="#heart"></use></svg>
             ️<span class="absolute -top-2 -right-2 text-sm font-GothamrndMedium">3</span>
           </span>

@@ -34,9 +34,6 @@
 
 .iphone-bg {
     background: url(./iphone.png);
-    width: 532px;
-    background-size: contain;
-    height: 694px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: 1px;

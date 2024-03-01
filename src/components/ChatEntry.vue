@@ -36,16 +36,16 @@ const bodyClasses = computed(() => ({
 
 </script>
 <template>
-  <li :class="containerClasses" class="flex justify-start items-end gap-x-2 cursor-default">
+  <li :class="containerClasses" class="flex justify-start items-end gap-x-1 xs:gap-x-2 cursor-default">
     <!-- Profile Avatar -->
     <div :class="profileClasses" :style="{ backgroundColor: color }"
-         class="w-8 h-8 rounded-full shrink-0 flex justify-center items-center text-[10px] duration-200">
+         class="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 rounded-full shrink-0 flex justify-center items-center duration-200">
       {{ sender[0].toUpperCase() }}
     </div>
     <!-- Message Body -->
     <div class="relative">
       <div :class="bodyClasses" :style="{ backgroundColor: color }"
-           class="message-body max-w-[173px] max-h-min rounded-t-2xl transition-colors duration-200 text-[11px] px-3 py-2 leading-4">
+           class="message-body max-w-[120px] sm:max-w-[173px] max-h-min rounded-t-2xl transition-colors duration-200 px-1.5 py-1 xs:px-2 xs:py-1.5 sm:px-3 sm:py-2 leading-4">
         <span class="font-LunasimaRegular">{{ body }}</span>
       </div>
       <!-- TimeStamp Component -->

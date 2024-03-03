@@ -19,10 +19,10 @@ const handleHeartClick = () => {
 
 <template>
 <span @click="handleHeartClick" :class="{ 'liked': liked, 'animating': isAnimating }"
-      class="heart-icon inline-block cursor-pointer p-0.5 self-center text-transparent">
+      class="heart-icon inline-block cursor-pointer p-1 self-center text-transparent">
       <svg
-          :class="{'stroke-[#ff4646] text-[#ff4646]': liked, 'text-transparent stroke-[#9e9d8f75] dark:stroke-[#4f4f4f91]': !liked}"
-          class="w-4 h-4 transition-all">
+          :class="{'stroke-[#ff4646] text-[#ff4646]': liked, 'text-transparent stroke-[#9e9d8f75] dark:stroke-[#5f5f5f91]': !liked}"
+          class="w-3 h-3 fhd-xs:w-4 fhd-xs:h-4 transition-all duration-75">
         <use xlink:href="#heart"></use>
       </svg>
     </span>
@@ -31,11 +31,11 @@ const handleHeartClick = () => {
 <style scoped>
 .heart-icon {
   cursor: pointer;
-  transition: transform 0.2s ease-in-out
+  transition: transform 0.1s ease-in-out
 }
 
 .animating {
-  animation: pulse 0.5s
+  animation: pulse 0.4s
 }
 
 @keyframes pulse {

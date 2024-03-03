@@ -6,6 +6,18 @@ export default {
         "./src/**/*.{vue,js,ts,tsx}",
     ],
     theme: {
+        screens: {
+            'xs': {'raw': '(min-width: 480px)'},
+            'sm': {'raw': '(min-width: 640px)'},
+            'md': {'raw': '(min-width: 768px)'},
+            'lg': {'raw': '(min-width: 1024px)'},
+            'fhd-xs': {'raw': '(min-height: 769px) and (min-width: 480px)'},
+            'fhd-sm': {'raw': '(min-height: 769px) and (min-width: 640px)'},
+            'fhd-md': {'raw': '(min-height: 769px) and (min-width: 768px)'},
+            'fhd-lg': {'raw': '(min-height: 769px) and (min-width: 1024px)'},
+            'fhd-xl': {'raw': '(min-height: 769px) and (min-width: 1280px)'},
+
+        },
         extend: {
             container: {
                 center: true,
@@ -13,13 +25,6 @@ export default {
                     DEFAULT: "1rem",
                     lg: "0.625rem"
                 }
-            },
-            screens: {
-                'xs': '480px',
-                'sm': '640px',
-                'md': '768px',
-                'lg': '1024px',
-                'xl': '1280px',
             },
             boxShadow: {
                 lightRight: '2px 1px 4px rgba(0, 0, 0, 0.1)',

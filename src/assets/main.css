@@ -33,7 +33,7 @@
 }
 
 .iphone-bg {
-    background: url(./iphone.png);
+    background: url("/iphone.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: 1px;
